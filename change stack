@@ -1,0 +1,52 @@
+#check
+memory.size(max = FALSE)
+memory.limit(size = NA)
+
+问题原因：
+C语言程序执行时会先检查函数的堆栈，linux系统会有一个默认的堆栈大小限制，在B函数中，由于一个数组分配空间过大（2M），栈空间大小超出了限制，不能执行，因此程序挂掉。
+
+linux修改线程默认栈空间大小方法：
+在/etc/profile 的最后面添加ulimit -s unlimited 保存，source /etc/profile使修改文件生效
+
+linux查看修改线程默认栈空间大小 ：ulimit -s
+
+1、通过命令 ulimit -s 查看linux的默认栈空间大小，默认情况下 为10240 即10M
+
+2、通过命令 ulimit -s 设置大小值 临时改变栈空间大小：ulimit -s 102400， 即修改为100M
+
+3、可以在/etc/rc.local 内 加入 ulimit -s 102400 则可以开机就设置栈空间大小
+
+4、在/etc/security/limits.conf 中也可以改变栈空间大小：
+————————————————
+版权声明：本文为CSDN博主「gxw1994」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。
+原文链接：https://blog.csdn.net/gxw1994/article/details/81035792
+
+unlimited -a
+
+
+#windows
+memory.limit(size=8000000)
+
+#linus
+options(expressions = 5e5)
+options("expression" = 500000)
+options?
+
+#memory.size(TRUE)
+#memory.limit()
+#memory.size(max = FALSE)
+#memory.limit(size = NA)
+#options("expressions"=20000)
+#memory.limit(size=8000000)
+
+options(expressions = 5e5)
+options("expression" = 500000)
+options?
+  
+#windows
+#memory.limit(size=8000000)
+memory.limit(size=64000000)#64GB
+
+gcinfo(TRUE)
+gc() 
+  
