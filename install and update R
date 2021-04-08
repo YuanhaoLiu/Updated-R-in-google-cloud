@@ -1,0 +1,14 @@
+apt-cache search "^r-.*" | sort
+sudo apt-get install r-base r-base-dev
+sudo apt-get install libatlas3-base
+R
+#3.5
+
+lsb_release -a
+sudo apt-get install gdebi-core
+sudo adduser colin
+
+sudo apt-key adv --keyserver keys.gnupg.net --recv-key FCAE2A0E115C3D8A
+sudo add-apt-repository 'deb http://cloud.r-project.org/bin/linux/debian buster-cran35/'
+sudo apt update
+udo apt install -t buster-cran35 r-base
