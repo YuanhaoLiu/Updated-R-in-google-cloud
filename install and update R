@@ -1,3 +1,15 @@
+https://towardsdatascience.com/r-studio-server-on-google-cloud-dd69b8bff80b
+https://www.rstudio.com/products/rstudio/download-server/debian-ubuntu/
+https://linuxhint.com/bash_wget_command_not_found/
+
+
+
+
+
+
+
+
+
 apt-cache search "^r-.*" | sort
 sudo apt-get install r-base r-base-dev
 sudo apt-get install libatlas3-base
